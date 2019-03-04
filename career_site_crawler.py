@@ -10,10 +10,7 @@ class CareerSiteCrawler:
 
     def run(self):
         login_list = self.read_csv()
-        company_name = login_list[0]
-        url = login_list[1]
-        username = login_list[2]
-        password = login_list[3]
+        self.career_sites(login_list)
 
     def read_csv(self):
         login_list = []
@@ -23,8 +20,11 @@ class CareerSiteCrawler:
                 login_list.append(row)
         return login_list
 
-    def career_sites(self):
-        pass
+    def career_sites(self, login_list):
+        company_name = login_list[0]
+        url = login_list[1]
+        username = login_list[2]
+        password = login_list[3]
 
 
 def parse_args():
